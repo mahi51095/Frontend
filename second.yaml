@@ -1,0 +1,23 @@
+name: Frontend CI
+
+# Trigger workflow on every push to main branch
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      # Step 1: Checkout the code
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # Step 2: Print a message (simulates build/test)
+      - name: Run sample command
+        run: echo "Workflow triggered successfully! Files in repo:"
+      
+      # Step 3: List files in repo
+      - name: List files
+        run: ls -ltr
